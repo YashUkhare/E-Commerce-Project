@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Entity
 @Getter
 @Setter
@@ -21,29 +20,28 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDetails extends BaseEntity
- 
+
 {
 
-	//id (pk),	user_id (fk),	payment_id (fk),	created at
+	// id (pk), user_id (fk), payment_id (fk), created at
 
-	
 	@ManyToOne
-	private UserEntity user;//many to one
-	
+	private UserEntity user;// many to one
+
 	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date createdAt;
-	
+
 	@NotBlank(message = "Order status is required")
 	@Column(length = 16, nullable = false)
-	//@Enumerated(EnumType.STRING)
+	// @Enumerated(EnumType.STRING)
 	private String status;
-	
+
 	@OneToOne
 	private UserAddress address;
-	
+
 	@Column(columnDefinition = "BOOLEAN")
 	private boolean codStatus;
-	
+
 	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date statusUpdatedAt;
 

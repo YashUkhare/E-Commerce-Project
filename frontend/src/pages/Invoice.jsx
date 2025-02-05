@@ -142,13 +142,14 @@ export default function Invoice() {
               </MDBTableHead>
               <MDBTableBody>
                 {allProducts.map((product) => {
+                  subTotal += product.quantity * product.price;
                   return (
                     <tr key={product.id}>
                       <th scope="row">{product.id}</th>
                       <td>{product.name}</td>
                       <td>{product.quantity}</td>
                       <td>₹{product.price}</td>
-                      <td>₹{subTotal += product.quantity * product.price}</td>
+                      <td>₹{product.price*product.quantity}</td>
                     </tr>
                   );
                 })}
@@ -188,19 +189,19 @@ export default function Invoice() {
                   <span class="text-black me-4">SubTotal</span>₹{subTotal}
                 </li>
                 <li className="text-muted ms-3 mt-2">
-                  <span class="text-black me-4">Tax(15%)</span>₹{subTotal * 0.15}
+                  <span class="text-black me-4">GST(18%)</span>₹{subTotal * 0.18}
                 </li>
               </MDBTypography>
               <p className="text-black float-start">
                 <span className="text-black me-3"> Total Amount</span>
-                <span style={{ fontSize: "25px" }}>₹{subTotal - (subTotal * 0.15)}</span>
+                <span style={{ fontSize: "25px" }}>₹{subTotal + (subTotal * 0.18)}</span>
               </p>
             </MDBCol>
           </MDBRow>
           <hr />
           <MDBRow>
             <MDBCol xl="10">
-              <p>Thank you for your purchase</p>
+              
             </MDBCol>
             <MDBCol xl="2">
               <MDBBtn

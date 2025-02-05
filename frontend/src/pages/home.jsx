@@ -60,7 +60,7 @@ const Home=()=>{
                         PRODUCTS!</h1>
             </div>_
            <Row key="2">
-                <Col  >
+                <Col>
                   <ProductCarousel products={Products}/>
                 </Col>
            </Row>

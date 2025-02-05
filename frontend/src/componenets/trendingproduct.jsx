@@ -50,7 +50,7 @@ return(
       {products.map((product)=>{
         return(
         <Card style={{ 
-             width: '18rem',
+             width: '20rem',
              borderRadius:10,
              boxShadow:'0 4px 8px rgba(0, 0, 0, 0.5)',
              backgroundColor: '#C8E4B2'}}>

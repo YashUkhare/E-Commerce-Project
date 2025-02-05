@@ -105,10 +105,6 @@ return(
             </Row>
             </Col>
         </Row>
-        <Row style={{textAlign:'center'}}>
-            <h1>Similar Products</h1>
-            {/* <ProductCarousel  product={product}/> */}
-        </Row>
     </Row>
    
    
